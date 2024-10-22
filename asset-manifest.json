@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/date/static/css/main.4f685611.css",
+    "main.js": "/date/static/js/main.c1299977.js",
+    "static/js/787.d5fa4d18.chunk.js": "/date/static/js/787.d5fa4d18.chunk.js",
+    "static/media/birthdaySong.mp3": "/date/static/media/birthdaySong.cba3cbcd8e28e14c31d2.mp3",
+    "static/media/bg1.jpg": "/date/static/media/bg1.b3867adba7854de889d9.jpg",
+    "static/media/bg.jpg": "/date/static/media/bg.8e6a457eb3f54195f8e5.jpg",
+    "static/media/puffy-bear-love.gif": "/date/static/media/puffy-bear-love.a03f0a3c574901cd81be.gif",
+    "static/media/laugh.gif": "/date/static/media/laugh.5a5a25e637bee00db006.gif",
+    "static/media/peach-goma.gif": "/date/static/media/peach-goma.5b545a45aff975859e47.gif",
+    "static/media/bgStrips.jpg": "/date/static/media/bgStrips.58c3e0d5016e76b6ed45.jpg",
+    "static/media/bird-cute.gif": "/date/static/media/bird-cute.2ba3b67b37d1c1d13aeb.gif",
+    "static/media/heart.png": "/date/static/media/heart.0853908963a76a67bc03.png",
+    "static/media/happy-birthday.png": "/date/static/media/happy-birthday.bffa2100dce02e50cd3c.png",
+    "index.html": "/date/index.html",
+    "main.4f685611.css.map": "/date/static/css/main.4f685611.css.map",
+    "main.c1299977.js.map": "/date/static/js/main.c1299977.js.map",
+    "787.d5fa4d18.chunk.js.map": "/date/static/js/787.d5fa4d18.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f685611.css",
+    "static/js/main.c1299977.js"
+  ]
+}
