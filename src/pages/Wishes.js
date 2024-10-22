@@ -1,70 +1,59 @@
-import React, { useState, useRef, useEffect } from 'react';
-import birthdaySong from "./MP3/birthdaySong.mp3";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CSS/wishes.css';
 
 function Wishes(props) {
-  const name = props.userData.name;
-  const dob = props.userData.dob;
-  const gender = props.userData.gender;
+  const { name, dob, gender,newAge,snowfall } = props.userData;
+
   const [clicked, setClicked] = useState(false);
-  const audioRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setClicked(true);
-    if (audioRef.current) {
-      audioRef.current.play();
-    }
   };
 
+  useEffect(() => {
+    if (clicked) {
+      const timer = setTimeout(() => {
+        navigate('/Celebrate'); 
+      }, 1000); 
+      return () => clearTimeout(timer);
+    }
+  }, [clicked, navigate]);
+
   return (
-    <div className={`landing-page ${clicked ? 'clicked' : ''}`} onClick={handleClick}>
-    
-    {!clicked && (
-      <div className='img1'>
-          <div className="img1-content">
-            <div className="img1-image" />
-            <div className='WishText'>
-            
-            Today is {dob}—YOUR BIRTHDAY! 
-            On this special day, I want to take a moment to express how deeply I cherish our friendship. 
-            Oh {gender}! Your presence brings such warmth and joy to my life. 
-            May your day be filled with the same extraordinary happiness and love that you effortlessly bring to everyone around you. 
-            As you celebrate, know that you've touched my heart as no one else could. 
-            <br></br>
-            Let’s give a high five! 🖐 to my heart above.
+    <div className='wishesPage'>
+      <div className={`content ${clicked ? 'clicked' : ''}`}>
+        <div className='img1' onClick={handleClick}></div>
+        <div className='WishText'>
+          Today is {dob}—YOUR {newAge} BIRTHDAY! 
+          On this special day, I want to take a moment to express how deeply I cherish our friendship. 
+          Oh {gender}! Your presence brings such warmth and joy to my life. 
+          May your day be filled with the same extraordinary happiness and love that you effortlessly bring to everyone around you. 
+          As you celebrate, know that you've touched my heart as no one else could. 
+          <br />
+          Give a high five! 🖐 to my heart above.
+        </div>
+      </div>
 
-            </div>
+      {/* Snowflakes animation */}
+      <div className="snowflakes">
+        {[...Array(100)].map((_, index) => (
+          <div
+            key={index}
+            className="snowflake"
+            style={{
+              left: `${Math.random() * 100}vw`, // Random horizontal position
+              animationDuration: `${5 + Math.random() * 10}s`, // Random duration between 5 and 15 seconds
+              animationDelay: `-${Math.random() * 10}s` // Random delay up to 10 seconds
+            }}
+          >
+            {snowfall}
           </div>
-        </div>
-    )}
-      {clicked && (
-        <div className="overlay">
-          <h1>Happy Birthday</h1>
-          <h1>{name} !!</h1>
-          <audio ref={audioRef} src={birthdaySong} autoPlay />
-        </div>
-      )}
-    <div class="snowflake">❅</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
+        ))}
+      </div>
 
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
-  <div class="snowflake">❅</div>
-  <div class="snowflake">❆</div>
-  <div class="snowflake">❄</div>
+     
     </div>
   );
 }
