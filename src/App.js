@@ -16,6 +16,7 @@ function App() {
     gender: 'Girl',
     prevAge: '21st',
     newAge:'22nd',
+    relationship: 'love',
     fireworks: [' ','🩷',' ','🤍',],
 
     // ❅
